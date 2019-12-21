@@ -16,6 +16,7 @@ import AddBuisness from '../container/addBuisness'
 
 
 
+
  
 const Dashboard = (props) => {
     console.log('text',props)
@@ -40,9 +41,9 @@ const Dashboard = (props) => {
                 <TableBody>
                 {props.buisness.map((buisness, idx) => (
                     <TableRow key={buisness.id}>
-                        <TableCell component="th" scope="row">
+                        {/* <TableCell component="th" scope="row">
                             {buisness.id}
-                        </TableCell>
+                        </TableCell> */}
                         <TableCell>{buisness["name"]}</TableCell>
                         <TableCell>{buisness["description"]}</TableCell>
                         <TableCell>{buisness["hours"]}</TableCell>
@@ -50,7 +51,7 @@ const Dashboard = (props) => {
                         <TableCell>
                             <DeleteIcon
                                 onClick = {() => props.removeBuisness(idx)}// add onClick method here
-                                className="icon text-red" />
+                                className="delete" />
                         </TableCell>
                     </TableRow>
                 ))}

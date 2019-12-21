@@ -7,6 +7,7 @@ import { Provider } from 'react-redux'
 import store from './redux/store'
 
 function App() {
+  console.log(process.env.REACT_APP_MAP_KEY)
   return (
     <Provider store={store}>
       <BrowserRouter>

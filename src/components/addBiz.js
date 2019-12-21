@@ -6,6 +6,9 @@ import {
     DialogContent,
     DialogTitle
 } from '@material-ui/core'
+import Map1 from '../components/map1'
+import {Link} from "react-router-dom";
+
 
 class AddBiz extends Component {
     state = {
@@ -53,7 +56,7 @@ class AddBiz extends Component {
             <Fragment>
                 <div style={{ textAlign: 'center' }}>
                     {/* <h1>Add buisness:</h1> */}
-                    <Button
+                    <Button color="secondary"
                         variant="contained"
                         className="add-buisness"
                         onClick={this.toggleDialog}
@@ -93,11 +96,14 @@ class AddBiz extends Component {
                                     onChange={this.handleTextChange} 
                                     required />
                                 <br />
-                                <Button variant="contained" color="primary" type="submit">Submit</Button>
+                                <Map1/>
+                                <Button variant="contained" color="secondary" type="submit">save</Button>
+                                
                             </form>
                         </DialogContent>
                     </Dialog>
                 </div>
+                
             </Fragment>
         )
     }

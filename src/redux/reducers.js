@@ -1,8 +1,20 @@
 import { combineReducers } from 'redux'
 // import { addBuisness, removeBuisness } from './actions';
+import initialState from './state';
+
 
 const user = (state = null) => state
-
+const login = (state = initialState, action) => {
+    switch (action.type) {
+      case 'SET_LOGIN_STATUS':
+        return { // changing redux state without mutating
+          ...state,
+          login: action.payload
+        }
+      default:
+        return state
+    }
+  }
 // add switch statements in here
 const buisness = (state = [], action) => {
     console.log(action,"action",state)
@@ -18,4 +30,4 @@ const buisness = (state = [], action) => {
         return state
  }
 }
-export default combineReducers({ user, buisness })
+export default combineReducers({ user, buisness,login })

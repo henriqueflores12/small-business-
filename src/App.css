@@ -52,3 +52,9 @@
   text-decoration: blue;
   
 }
+.delete{
+  color: rgb(0, 255, 0);
+}
+.login{
+  color: green;
+}

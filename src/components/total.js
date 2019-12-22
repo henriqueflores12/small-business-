@@ -5,7 +5,7 @@ const Total = (props) => {
         <div style={{ textAlign: 'center' }}>
             <h1>Total:</h1>
             {/* change 4 to props.cars.length */}
-            <h1>{props.buisness.length}</h1>
+            <h1>{props.business.length}</h1>
         </div>
     )
 }

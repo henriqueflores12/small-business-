@@ -1,11 +1,11 @@
   
 import { connect } from 'react-redux'
-import buisness from '../container/buisness'
+import business from '../container/business'
 
 const mapStateToProps = (state) => {
     return {
-        buisness: state.buisness
+        business: state.business
     }
 }
 
-export default connect(mapStateToProps)(buisness)
+export default connect(mapStateToProps)(business)

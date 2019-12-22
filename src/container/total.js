@@ -1,9 +1,9 @@
 import { connect } from 'react-redux'
-import Total from '../components/total'
+import Total from '../components/Total'
 
 const mapStateToProps = (state) => {
     return {
-        buisness: state.buisness
+        business: state.business
     }
 }
 

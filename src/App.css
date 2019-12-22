@@ -53,8 +53,12 @@
   
 }
 .delete{
-  color: rgb(0, 255, 0);
+  color: rgb(255, 8, 0);
 }
 .login{
   color: green;
+}
+.login{
+  background-color: dimgray;
+  color: white;
 }

@@ -1,13 +1,12 @@
 import React, { Component } from "react";
 import GoogleMapReact from "google-map-react";
 import { Link } from "react-router-dom";
-// import {Map1} from '../router/Map1'
 import LocationOnIcon from "@material-ui/icons/LocationOn";
 
 
 const MarkerComponent = ({ text }) => <div>{text}</div>;
 
-class Map1 extends Component {
+class Map extends Component {
   static defaultProps = {
     center: {
       lat: 30.267153,
@@ -66,4 +65,4 @@ class Map1 extends Component {
   }
 }
 
-export default Map1;
+export default Map;

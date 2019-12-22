@@ -9,10 +9,23 @@ import {
 import { Link } from "react-router-dom";
 
 class login extends Component {
-  login = () => {
+  state = {
+    username: '',
+    password: ''
+  }
+  handleLogin = () => {
     document.cookie = "loggedIn=true";
-    //  window.location.replace("/dashboard1")
+    // create user object with local state values
+    const newUser = {
+      username: this.state.username,
+      password: this.state.password
+    }
+    this.props.setLogin(true);
+    this.props.setUser(newUser) // pass newUser object to redux action
   };
+  handleChange = (e) => {
+    this.setState({[e.target.name]: e.target.value});
+  }
   render() {
     return (
       <div className="App-header2">
@@ -24,6 +37,9 @@ class login extends Component {
             type="text"
             autoComplete="current-password"
             margin="normal"
+            name="username"
+            value={this.state.username}
+            onChange={(e) => this.handleChange(e)}
           >
             password
           </TextField>
@@ -34,19 +50,16 @@ class login extends Component {
             type="password"
             autoComplete="current-password"
             margin="normal"
+            name="password"
+            value={this.state.password}
+            onChange={(e) => this.handleChange(e)}
           >
             password
           </TextField>
           <Link to="/dashboard1">
             <Button
               color="inherit"
-              onClick={() => {
-                this.login();
-                document.cookie = "login=true";
-                this.props.handleLogIn(true);
-
-                this.setState({ loggedIn: true });
-              }}
+              onClick={() => this.handleLogin()}
             >
               login
             </Button>

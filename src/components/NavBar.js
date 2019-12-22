@@ -43,9 +43,11 @@ export default function ButtonAppBar(props) {
             <Button
               color="inherit"
               onClick={() => {
-                // props.handleLogIn(true)
-                console.log(props);
-                // window.location.replace("/login")
+                if (props.login) {
+                  props.setLogin(false);
+                } else {
+                  props.setLogin(true);
+                }
               }}
             >
               {props.login ? "Log out" : "Log in"}
@@ -53,6 +55,8 @@ export default function ButtonAppBar(props) {
           </Link>
         </Toolbar>
       </AppBar>
+      <div className="login">login as {props.user.username}</div>
     </div>
+
   );
 }

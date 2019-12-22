@@ -7,9 +7,9 @@ import {
   TableHead,
   TableRow
 } from "@material-ui/core";
-import smallBuisness from "./buisness.json";
+import smallBusiness from "./business.json";
 import { Link } from "react-router-dom";
-import Map1 from "../components/map1";
+import Map from "./Map";
 const Dashboard = props => {
   return (
     <Container maxWidth="lg" className="car-container">
@@ -26,20 +26,23 @@ const Dashboard = props => {
         </TableHead>
         <TableBody>
           {/* Change cars to props.cars and remove the cars.json import above */}
-          {smallBuisness.map(buisness => (
-            <TableRow key={buisness.id}>
+          {smallBusiness.map(business => (
+            <TableRow key={business.id}>
               {/* <TableCell component="th" scope="row">
-                            {buisness.id}
+                            {business.id}
                         </TableCell> */}
 
-              <TableCell>{buisness["name"]}</TableCell>
+              <TableCell>{business["name"]}</TableCell>
 
-              <TableCell>{buisness["description"]}</TableCell>
-              <TableCell>{buisness["hours"]}</TableCell>
-              <Link to={{
-                pathname: '/Map1', state: buisness}}>
-                <TableCell>{buisness["address"]}</TableCell>
-
+              <TableCell>{business["description"]}</TableCell>
+              <TableCell>{business["hours"]}</TableCell>
+              <Link
+                to={{
+                  pathname: "/map",
+                  state: business
+                }}
+              >
+                <TableCell>{business["address"]}</TableCell>
               </Link>
             </TableRow>
           ))}

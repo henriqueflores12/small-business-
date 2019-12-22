@@ -1,20 +1,25 @@
-// export const addBuisness = "add_buisness";
-// export const removeBuisness = "remove_buisness";
-export const handleLogIn = boolean => ({
-    type: 'SET_LOGIN_STATUS',
-    payload: boolean // true or false
-  })
+export const setLogin = boolean => ({
+  type: "SET_LOGIN_STATUS",
+  value: boolean // true or false
+});
 
-export const add_Buisness = (newBuisness) => {
-    return {
-        type: 'add_buisness',
-        value: newBuisness
-    }
-}
+export const AddBusiness = newBusiness => {
+  return {
+    type: "ADD_BUSINESS",
+    value: newBusiness
+  };
+};
 
-export const remove_Buisness = (index) => {
-    return {
-        type: 'remove_buisness',
-        value: index
-    }
-}
+export const removeBusiness = index => {
+  return {
+    type: "REMOVE_BUSINESS",
+    value: index
+  };
+};
+
+export const setUser = user => {
+  return {
+    type: "SET_USER",
+    value: user
+  };
+};

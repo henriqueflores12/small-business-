@@ -1,10 +1,10 @@
 export default {
     user: {
-        username: 'test-user-1',
-        email: 'test-user@example.com'
+        username: '',
+        password: ''
     },
     login:false,
-    buisness: [
+    business: [
         {  
             
             "name":"chevrolet chevelle malibu",
